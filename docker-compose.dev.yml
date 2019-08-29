@@ -1,0 +1,13 @@
+version: "3.5"
+
+services:
+  frontend:
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    volumes:
+      - ./frontend:/frontend
+      - /frontend/node_modules
+
+  nginx:
+    restart: unless-stopped
