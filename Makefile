@@ -1,8 +1,11 @@
 dev-dockerfile = -f docker-compose.yml -f docker-compose.dev.yml
 
+install-frontend-deps:
+	npm --prefix ./frontend install
+
 build:
-	sudo docker-compose $(dev-dockerfile) build
+	docker-compose $(dev-dockerfile) build
 	make dev
 
 dev:
-	sudo docker-compose $(dev-dockerfile) up
+	docker-compose $(dev-dockerfile) up
